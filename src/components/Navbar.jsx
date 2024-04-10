@@ -1,5 +1,5 @@
-import React from 'react'
-import {AppBar, Toolbar, Typography, styled, Box} from "@mui/material"
+import React, { useState } from 'react'
+import {AppBar, Toolbar, Typography, styled, Box, Menu, MenuItem} from "@mui/material"
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
@@ -69,6 +69,7 @@ const MyNavSerach = styled("div")(({theme})=>({
 }))
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false)
   return (
     <AppBar position='sticky'>
         <MyStyledToolbar>
@@ -82,12 +83,50 @@ const Navbar = () => {
               <Badge color="error" badgeContent={7}>
                 <NotificationsActiveIcon  />
               </Badge>
-              <Avatar {...stringAvatar('Sandipan C')} />
+              <Avatar {...stringAvatar('Sandipan C')} onClick={e => setOpen(true)} />
             </MyNavIconsTray>
             <MyNavIconsTraySM sx={{display: {xs: 'flex', sm: 'none'}}}>
-              <Avatar {...stringAvatar('Sandipan C')} />
-              {/* <Typography variant="h6" color="initial">Sandipan</Typography> */}
+              <Avatar {...stringAvatar('Sandipan C')} onClick={e => setOpen(true)} />
+              
             </MyNavIconsTraySM>
+            <Menu sx={{display: {xs: 'none', sm: 'block'}}}
+              id="demo-positioned-menu"
+              aria-labelledby="demo-positioned-button"
+              // anchorEl={anchorEl}
+              open={open}
+              onClose={e=>setOpen(false)}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+            >
+              <MenuItem>Logout</MenuItem>
+              <MenuItem>My account</MenuItem>
+            </Menu>
+            <Menu sx={{display: {xs: 'flex', sm: 'none'}}}
+              id="demo-positioned-menu-sm"
+              aria-labelledby="demo-positioned-button-sm"
+              // anchorEl={anchorEl}
+              open={open}
+              onClose={e=>setOpen(false)}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+            >
+              <MenuItem>Logout</MenuItem>
+              <MenuItem>My account</MenuItem>
+              <MenuItem>Messages</MenuItem>
+              <MenuItem>Notification</MenuItem>
+            </Menu>
         </MyStyledToolbar>
     </AppBar>
   )
