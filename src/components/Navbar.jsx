@@ -68,13 +68,13 @@ const MyNavSerach = styled("div")(({theme})=>({
   }
 }))
 
-const Navbar = () => {
+const Navbar = ({setSideBar}) => {
   const [open, setOpen] = useState(false)
   return (
     <AppBar position='sticky'>
         <MyStyledToolbar>
             <Typography variant="h5" sx={{display: {xs: 'none', sm: 'block'}}}>ReactBook</Typography>
-            <Box sx={{display: {xs: 'block', sm: 'none'}}}><ConnectWithoutContactIcon fontSize='large'/></Box>
+            <Box sx={{display: {xs: 'block', sm: 'none'}}} onClick={e=>setSideBar(true)}><ConnectWithoutContactIcon fontSize='large'  /></Box>
             <MyNavSerach><InputBase placeholder='Search...'></InputBase></MyNavSerach>
             <MyNavIconsTray sx={{display: {xs: 'none', sm: 'flex'}}}>
               <Badge color="error" badgeContent={22}>
