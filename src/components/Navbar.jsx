@@ -122,10 +122,12 @@ const Navbar = ({setSideBar}) => {
                 horizontal: 'right',
               }}
             >
-              <MenuItem>Logout</MenuItem>
-              <MenuItem>My account</MenuItem>
+              <MenuItem>My Posts</MenuItem>
+              <MenuItem>My Friends</MenuItem>
               <MenuItem>Messages</MenuItem>
               <MenuItem>Notification</MenuItem>
+              <MenuItem>My account</MenuItem>
+              <MenuItem>Logout</MenuItem>
             </Menu>
         </MyStyledToolbar>
     </AppBar>

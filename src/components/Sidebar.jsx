@@ -12,7 +12,10 @@ const Sidebar = ({sideBar, setSideBar}) => {
   return (
     <>
         <Box sx={{ display: {xs: 'none', sm: 'block'}}} flex={1} padding={2}>
-          <SidebarInnerLists></SidebarInnerLists>
+          <Box sx={{position: "fixed"}}>
+          <SidebarInnerLists/>
+          </Box>
+          
         </Box>
 
         <Drawer
