@@ -1,8 +1,10 @@
-# React + Vite
+# React + Vite + MUI (material UI)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a frontend setup of social media with below-mentioned features
 
-Currently, two official plugins are available:
+1. React-based app hence it is easily pluggable with any backend service.
+2. Light and dark theme compatible.
+3. Completely responsive for all mobile, tablet, and desktop devices.
+4. MUI (Material UI) is used so that any developer can enhance the existing features smoothly.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
