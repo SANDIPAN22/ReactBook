@@ -8,12 +8,12 @@ const Rightbar = () => {
   return (
     <Box sx={{ display: {xs: 'none', sm: 'flex'}}} flex={2} padding={2}>
         <Box sx={{position: 'fixed'}}>
-            <Typography variant="h5" color="initial" sx={{margin: '15px'}}>My Posts</Typography>
+            <Typography variant="h5" color="gray" sx={{margin: '15px'}} >My Posts</Typography>
             <Box sx={{margin: '10px'}}>
               <PhotoList/>
             </Box>
             <br />
-            <Typography variant="h5" color="initial" sx={{margin: '15px'}}>My Friends</Typography>
+            <Typography variant="h5" color="gray" sx={{margin: '15px'}}>My Online Friends</Typography>
             
               <AvatarGroup max={5}  sx={{flexDirection: 'row', marginLeft: '20px'}}>
               <Avatar alt="Remy Sharp" src="https://api.multiavatar.com/Binx Bond.png" />

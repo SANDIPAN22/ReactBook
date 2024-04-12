@@ -5,7 +5,7 @@ import SidebarInnerLists from "./SidebarInnerLists";
 import React from "react";
 
 
-const Sidebar = ({sideBar, setSideBar}) => {
+const Sidebar = ({sideBar, setSideBar, addPost, setAddPost, setMode}) => {
  
   
 
@@ -13,7 +13,7 @@ const Sidebar = ({sideBar, setSideBar}) => {
     <>
         <Box sx={{ display: {xs: 'none', sm: 'block'}}} flex={1} padding={2}>
           <Box sx={{position: "fixed"}}>
-          <SidebarInnerLists/>
+          <SidebarInnerLists addPost={addPost} setAddPost={setAddPost} setMode={setMode}/>
           </Box>
           
         </Box>
@@ -23,7 +23,7 @@ const Sidebar = ({sideBar, setSideBar}) => {
         open={sideBar}
         onClose={e=>{setSideBar(false)}}
         >
-            <SidebarInnerLists></SidebarInnerLists>
+            <SidebarInnerLists addPost={addPost} setAddPost={setAddPost} setMode={setMode}/>
         </Drawer>
     </>
   )

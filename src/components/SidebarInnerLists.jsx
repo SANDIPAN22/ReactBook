@@ -14,10 +14,16 @@ import PostAddIcon from '@mui/icons-material/PostAdd';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
 import { useState } from 'react'
 
-const SidebarInnerLists = () => {
+const SidebarInnerLists = ({addPost, setAddPost, setMode}) => {
     const [checked, setChecked] = useState(true)
     const handleThemeSwitch = ( ) =>{
         setChecked(prev => !prev)
+        setMode(prev => {
+          if (prev === 'dark'){
+            return 'light'
+          }
+          return 'dark'
+        })
       }
   return (
     <div>
@@ -76,7 +82,7 @@ const SidebarInnerLists = () => {
               </ListItemIcon>
               <ListItemText primary="Add Friend" />
             </ListItemButton>
-            <ListItemButton>
+            <ListItemButton onClick={e=>setAddPost(true)}>
               <ListItemIcon>
                 <PostAddIcon />
               </ListItemIcon>

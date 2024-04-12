@@ -55,10 +55,12 @@ const MyNavIconsTray = styled(Box)(({theme})=>({
   width: '15%',
   alignItems: 'center',
 }))
-const MyNavSerach = styled("div")(({theme})=>({
+const MyNavSerach = styled(Box)(({theme})=>({
   backgroundColor: "white",
   padding: "1px 10px",
-  color: 'gray',
+  "::placeholder":{
+    color: 'green'
+  },
   borderRadius: theme.shape.borderRadius,
   [theme.breakpoints.up('xs')]:{
     width: '45%',
@@ -75,7 +77,7 @@ const Navbar = ({setSideBar}) => {
         <MyStyledToolbar>
             <Typography variant="h5" sx={{display: {xs: 'none', sm: 'block'}}}>ReactBook</Typography>
             <Box sx={{display: {xs: 'block', sm: 'none'}}} onClick={e=>setSideBar(true)}><ConnectWithoutContactIcon fontSize='large'  /></Box>
-            <MyNavSerach><InputBase placeholder='Search...'></InputBase></MyNavSerach>
+            <MyNavSerach><InputBase placeholder='Search...' sx={{input: {color: 'black'}}}></InputBase></MyNavSerach>
             <MyNavIconsTray sx={{display: {xs: 'none', sm: 'flex'}}}>
               <Badge color="error" badgeContent={22}>
                 <MailIcon />
