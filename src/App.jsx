@@ -6,6 +6,7 @@ import {Stack, Box} from "@mui/material"
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Navbar from './components/Navbar'
 import AddPost from './components/AddPost'
+import { GenericContextProvider } from './contexts/GenericContext'
 
 const App = () => {
   const [sideBar, setSideBar] = useState(false)
@@ -17,17 +18,19 @@ const App = () => {
     }
   })
   return (
+    <GenericContextProvider value={{mode, setMode, addPost, setAddPost}}>
     < ThemeProvider theme={MyTheme}>
     <Box bgcolor={"background.default"} color={"text.primary"}>
     <Navbar setSideBar={setSideBar} />
       <Stack direction={"row"} spacing={2} justifyContent={'space-between'}>
-        <Sidebar sideBar={sideBar} setSideBar={setSideBar} addPost={addPost} setAddPost={setAddPost} setMode={setMode}/>
+        <Sidebar sideBar={sideBar} setSideBar={setSideBar}  />
         <Feed/>
         <Rightbar/>
       </Stack>
-    <AddPost addPost={addPost} setAddPost={setAddPost}/>
+    <AddPost />
     </Box>
     </ThemeProvider>
+    </GenericContextProvider>
   )
 }
 

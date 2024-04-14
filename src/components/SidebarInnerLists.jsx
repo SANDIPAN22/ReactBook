@@ -13,9 +13,13 @@ import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import PostAddIcon from '@mui/icons-material/PostAdd';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
 import { useState } from 'react'
+import useGenericContext from '../contexts/GenericContext';
 
-const SidebarInnerLists = ({addPost, setAddPost, setMode}) => {
+
+
+const SidebarInnerLists = () => {
     const [checked, setChecked] = useState(true)
+    const { setMode, setAddPost} = useGenericContext()
     const handleThemeSwitch = ( ) =>{
         setChecked(prev => !prev)
         setMode(prev => {

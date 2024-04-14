@@ -11,6 +11,7 @@ import TagIcon from '@mui/icons-material/Tag';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import ScheduleIcon from '@mui/icons-material/Schedule';
+import useGenericContext from '../contexts/GenericContext';
 
 const style = {
     position: 'absolute',
@@ -29,7 +30,8 @@ const style = {
     gap: '10px'
   })
 
-const AddPost = ({addPost, setAddPost}) => {
+const AddPost = () => {
+  const {addPost, setAddPost} = useGenericContext()
   return (
     <div>
     <Modal
